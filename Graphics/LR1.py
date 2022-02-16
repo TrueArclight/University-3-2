@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 from pylab import mpl
 
-x = [100, 121,  144]
-y = [10,11, 12]
+x = [50, 100, 144]
+y = [10, 12, 16]
  
 def ParametersOfLagrangeInterpolation(data_x,data_y,size):
     parameters=[]
@@ -38,7 +38,7 @@ def CalculateTheValueOfLarangeInterpolation(data_x,parameters,x):
 def  Draw(data_x,data_y,new_data_x,new_data_y):
         plt.plot (new_data_x, new_data_y, label = "соответствующая кривая", color = "black")
         plt.scatter (data_x, data_y, label = "дискретные данные", color = "red")
-        plt.scatter (115, 10.723805294764, label = "real data", color = "green")
+        plt.scatter (120.999, 13.6527, label = "real data", color = "green")
         mpl.rcParams['axes.unicode_minus'] = False
         plt.title ("Данные подгонки лагранжевой интерполяции")
         plt.legend(loc="upper left")
@@ -49,6 +49,6 @@ datax=[10,20,30,40,50,60,70,80,90,100,110,120,130,140,150]
 datay=[]
 for temp in datax:
     datay.append(CalculateTheValueOfLarangeInterpolation(x,parameters,temp))
-x.append(115)
-y.append(CalculateTheValueOfLarangeInterpolation(x,parameters,115))
+x.append(120.999)
+y.append(CalculateTheValueOfLarangeInterpolation(x,parameters,120.999))
 Draw(x,y,datax,datay)
