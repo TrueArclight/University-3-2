@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pylab
 
 
 def formula(mIn, Cin, Tp, Tr, r, k, F, Ct):
