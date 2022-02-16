@@ -62,7 +62,7 @@ def plot():
     ax[1].set(title='C(вых) от m')
     ax[2].set(title='C(вых) от T')
 
-    fig.set_figwidth(5)
+    fig.set_figwidth(8)
     fig.set_figheight(10)
 
     plt.show()
