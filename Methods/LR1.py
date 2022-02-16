@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+<<<<<<< HEAD
+=======
+
+>>>>>>> methods_branch
 
 def formula(mIn, Cin, Tp, Tr, r, k, F, Ct):
     return (mIn * Cin) / (mIn + ((k * F * (Tp - Tr)) / (Ct * Tp - r)))
