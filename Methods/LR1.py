@@ -1,9 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-<<<<<<< HEAD
-=======
-
->>>>>>> methods_branch
 
 def formula(mIn, Cin, Tp, Tr, r, k, F, Ct):
     return (mIn * Cin) / (mIn + ((k * F * (Tp - Tr)) / (Ct * Tp - r)))
@@ -61,12 +57,10 @@ def plot():
     ax[1].grid(True)
     ax[2].plot(plot_x3, CoutPlot_3)
     ax[2].grid(True)
-
     ax[0].set(title='C(вых) от C')
     ax[1].set(title='C(вых) от m')
     ax[2].set(title='C(вых) от T')
-
-    fig.set_figwidth(8)
+    fig.set_figwidth(6)
     fig.set_figheight(10)
 
     plt.show()
