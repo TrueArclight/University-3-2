@@ -16,6 +16,7 @@ r = 2.26 * 10e6
 k = 5000
 F = 10
 Ct = 4187
+# changing params
 Cin = 12
 mIn = 5
 Tp = 150
