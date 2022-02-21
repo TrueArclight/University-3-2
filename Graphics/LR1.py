@@ -42,6 +42,7 @@ def  Draw(data_x,data_y,new_data_x,new_data_y):
         mpl.rcParams['axes.unicode_minus'] = False
         plt.title ("Данные подгонки лагранжевой интерполяции")
         plt.legend(loc="upper left")
+        plt.grid(True)
         plt.show()
  
 parameters=ParametersOfLagrangeInterpolation(x,y,3)

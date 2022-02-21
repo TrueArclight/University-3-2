@@ -28,22 +28,22 @@ def main():
     while C0 < C1:
         deltaC = 0.4
         CoutPlot_1.append(formula(mIn, C0, Tp, Tr, r, k, F, Ct))
-        plot_x1.append(C0)
         C0 += deltaC
+        plot_x1.append(C0)
 
     m0 = 4.5
     m1 = 7
     # change m
-    while m0 < m1:
+    while m0 <= m1:
         deltaM = 0.2
         CoutPlot_2.append(formula(m0, Cin, Tp, Tr, r, k, F, Ct))
-        plot_x2.append(m0)
         m0 += deltaM
+        plot_x2.append(m0)
 
     T0 = 130
     T1 = 155
     # change T
-    while T0 < T1:
+    while T0 <= T1:
         deltaT = 0.5
         CoutPlot_3.append(formula(mIn, Cin, T0, Tr, r, k, F, Ct))
         plot_x3.append(T0)
