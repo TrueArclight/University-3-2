@@ -25,7 +25,7 @@ t = 0
 speed = 0.002
 linear_positions = [Position(100, 800, "P0"), Position(300, 200, "P1")]
 Quadratic_positions = [Position(660, 800, "P0"), Position(880, 450, "P1"), Position(720, 200, "P2")]
-cubic_positions = [Position(1050, 800, "P0"), Position(1280, 200, "P1"), Position(1420, 800, "P2"), Position(1800, 200, "P3")]
+cubic_positions = [Position(1050, 800, "P0"), Position(1050, 200, "P1"), Position(1800, 200, "P2"), Position(1800, 800, "P3")]
 
 quadratic_curve = []
 cubic_curve = []

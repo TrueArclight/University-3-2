@@ -1,22 +1,211 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Мой первый сайт на html</title>
-        <link rel="stylesheet" href="style.css" type="text/css" />
-        <body>
-            <div id="basic">
-                <div id="head-site">
-                        <img src="images/logo.jpg" alt="Полярная сова" title="Полярная сова" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Криптовалюты</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>CoinTracker</span>
+        </div>
+        <strike></strike>
+        <samp></samp>
+        <div id="about">   
+            <a href ="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+            <a href ="#" title="Преимущества" onclick="slowScroll('#overview')">Преимущества</a>
+            <a href ="#" title="Контакты" onclick="slowScroll('#contacts')">Контакты</a>
+            <a href ="#" title="Ответы на вопросы" onclick="slowScroll('#faq')">FAQ</a>
+            <nav></nav>
+            <base>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Криптовалюта</h1>
+        <h3>это будущее!</h3>
+        <mark></mark>
+        <i></i>
+        <tt></tt>
+        <u></u>
+        <basefont></basefont>
+        <h6></h6>
+        <noembed></noembed>
+    </div>
+    <div id="main">
+        <div class="intro">
+            <bgsound src="sounds/suda.mp3" loop="-1"> 
+            <b><h2>Всегда вам поможем!</h2></b>
+            <span>Большой список услуг для помощи начинающим инвесторам.</span>
+            <ruby>
+                <rt></rt>
+            </ruby>
+            <s></s>
+            <comment></comment>
+            <aside></aside>
+        </div>
+        <div class="text">
+            <span>Покупайте и продавайте криптовалюту за считаные минуты. Осуществляйте торговлю, используя более 740 различных криптовалютных и фиатных торговых пар, 
+                включая пары к Bitcoin, Ethereum и BNB. Получите опыт бесперебойной торговли на крупнейшей в мире криптовалютной бирже по объему торгов. 
+                Наша система сопоставления способна обрабатывать до 1,4 миллиона ордеров в секунду.</span>
+                <div>
+                    <ul>
+                    <span>Распространенные валюты:</span>
+                    <select>
+                        <option>Биткоин</option>
+                        <option>Etherium</option>
+                        <option>Dogecoin</option>
+                    </select>
+                    <li>Биткоин</li>
+                    <li>Etherium</li>
+                    <li>Dogecoin</li>
+                    <ins></ins>
+                    <em></em>
+                    <dfn></dfn>
+                    <multicol></multicol>
+                    <spacer></spacer>
+                  </ul>
                 </div>
-            <h1>Полярная сова</h1>
-            <p>Полярная сова (белая сова) птица из семейства совиных. Самая крупная птица, из отряда совиных, в тундре. Голова у белой совы круглая, 
-                глаза жёлтые, длина тела достигает 70 см, масса 3 кг, размах крыльев 165 см. 
-                Ареал распространения - территория тундры: Евразия, Северная Америка, Гренландия.</p>
-            <p>Полярная сова обитает обычно в открытой местности, в лесах встречается редко. Питается в основном, мелкими грызунами: 
-                леммингами, в год может съесть более 1600 леммингов. 
-                Также в рацион совы входят зайцы, мелкие хищники, птицы, рыба и даже падаль.</p>
-            </div>
-        </body>
-    </head>
+                <nobr></nobr>
+        </div>
+    </div>
+
+    <div id="overview">
+        <h2>Преимущества</h2>
+        <h4>С нами все проще</h4>
+        <div class="img">
+            <img src="images/bitcoin.jpg" width="640" height="400" alt="" usemap="#Navigation">
+            <p><map name="Navigation" >
+                <area shape="poly" coords="113,24,211,24,233,0,137,0" href="images/comfort.jpg">
+            </map></p>
+            <span>Качество и комфорт</span>
+        </div>
+        <div class="img">
+            <video width="640" height="420" controls="controls">
+                <source src="video/cripto.mp4" type='video/ogg; codecs="theora, vorbis"'>
+            </video>
+            <span>Надежность и безопастноть</span>
+        </div>
+        <object></object>
+        <applet></applet>
+        <blockquote></blockquote>
+        <blink></blink>
+        <address>
+            
+    </div>
+
+    <div id="contacts">
+        <center><h5>Обратная связь</h5></center>
+        <form id="form_input">
+            <label for="name">Имя</label><span>*</span><br>
+            <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+            <label for="email">Ваша почта</label><span>*</span><br>
+            <input type="email" placeholder="Введите почту" name="email" id="email"><br>
+            <label for="message">Ваше сообщение</label><span>*</span><br>
+            <textarea placeholder="Введите ваще сообщение" name="message" id="message"></textarea><br>
+            <div id="mess_send" class="btn">Отправить</div> 
+        </form>
+        <code></code>
+    </div>
+
+    </div>
+
+    <div id="types">
+        <rp></rp>
+        <xmp></xmp>
+        <var></var>
+        <bdo></bdo>
+        <abbr></abbr>
+        <big></big>
+        <del></del>
+        <font></font>
+        <section></section>
+        <article></article>
+        <tr></tr>
+        <thead></thead>
+        <tfoot></tfoot>
+        <th></th>
+        <td></td>
+        <tbody></tbody>
+        <table></table>
+        <colgroup></colgroup>
+        <col>
+        <caption></caption>
+        <keygen>
+        <legend></legend>
+    </div>  
+
+    <div id="faq">
+        <div>
+            <dl>
+                <dfn><dt class="title">Криптовалюта</dt></dfn><hr>
+                <q><cite><dd>Это любой вид валюты в цифровой или виртуальной форме; для защиты транзакций в криптовалюте используется шифрование (криптография). 
+                    Не существует центрального органа по выпуску или регулированию криптовалют. 
+                    Для записи транзакций и выпуска новых единиц используется децентрализованная система</dd></cite></q>
+               </dl>
+        </div>
+        <div>
+            <menu>
+               
+                <strong></strong>
+                <sup></sup>
+                <span class="title">Оплата</span><br> <hr>
+                <ins><span class="heading">Как купить криптовалюту?</span></ins>
+                <ol>
+                <li>Зарегистрируйтесь на бирже</li>
+                <li>Пройдите верификацию личности</li>
+                <li>Купите криптовалюту за деньги</li>
+                <li>Приступайте к торговле</li>
+                </ol>
+                <fieldset></fieldset>
+                <optgroup></optgroup>
+                <button></button>
+               </menu>
+        </div>  
+        <div>
+            <hgroup>
+            <dir>
+                <span class="title">Широкая линейка продуктов</span><hr>
+                <li>Биткоин</li>
+                <li>Etherium</li>
+                <li>Dogecoin</li>
+                <sub>@deadsxnpai</sub>
+            </dir>
+            </hgroup>
+            <figcaption></figcaption>
+            <figure></figure>
+            <marquee></marquee>
+            <pre></pre>
+            <tt>
+            <acronym></acronym>
+            <kbd></kbd>
+            <wbr>
+        </div>
+        <div id="footer">
+            <source src="sounds/suda.mp3" type="audio/ogg; codecs=vorbis">
+            <footer>
+                Copyright @deadsxnpai
+            </footer>
+        </div>
+        <!--Комментарий -->
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function slowScroll(id){
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500)
+        }
+        $(document).on("scroll", function() {
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed")
+            else
+                $("header").attr("class", "fixed")
+        });
+    </script>
+</body>
 </html>
