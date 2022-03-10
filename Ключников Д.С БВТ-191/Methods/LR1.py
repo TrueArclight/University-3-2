@@ -11,11 +11,13 @@ CoutPlot_2 = []
 plot_x2 = []
 CoutPlot_3 = []
 plot_x3 = []
+
 Tr = 90
 r = 2260000
 k = 5000
 F = 10
 Ct = 4187
+
 # changing params
 Cin = 12
 mIn = 5
