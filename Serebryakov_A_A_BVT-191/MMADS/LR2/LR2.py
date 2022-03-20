@@ -1,8 +1,6 @@
-from re import A
 import matplotlib.pyplot as plt
 import numpy as np
 import math
-import DiffMethod as dm
 
 # Вариант 18 (Возмущения на входе, таблица 1.2)
 deltaC_Input = -6 # Изменения концентрации, %
