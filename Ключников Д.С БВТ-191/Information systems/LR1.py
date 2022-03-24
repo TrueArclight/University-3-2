@@ -2,7 +2,7 @@ import time
 import can
 
 bustype = 'socketcan'
-channel = 'vcan0'
+channel = "vcan0"
 
 def producer(id):
     bus = can.Bus(channel=channel, interface=bustype)
