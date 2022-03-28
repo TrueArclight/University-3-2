@@ -1,9 +1,5 @@
-import pylab
 import math
-import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import cm
-from mpl_toolkits.mplot3d import Axes3D
 
 kt = 5000
 t = 5000
@@ -12,7 +8,7 @@ Tr = 90
 r = 2.26 * 10 ** 6
 F = 10
 
-gizma = 0.12
+sigma = 0.12
 S = 0.75
 P_null = 7900
 P_first = 7600
@@ -38,16 +34,16 @@ m_vihod = []
 T_vihod = []
 
 C, m, T, vr = [], [], [], []
-c = lambda m_vh, C_vh, C_vihod, T0, m_vt: (m_vh * C_vh - C_vihod * gizma * math.sqrt(P_null + M(m_vh, m_vt) / S - P_first) - C_vihod * dM(m_vh, m_vt, T0)) / M(m_vh, m_vt)  # из файла
+c = lambda m_vh, C_vh, C_vihod, T0, m_vt: (m_vh * C_vh - C_vihod * sigma * math.sqrt(P_null + M(m_vh, m_vt) / S - P_first) - C_vihod * dM(m_vh, m_vt, T0)) / M(m_vh, m_vt)  # из файла
 
-f = lambda C_vh, m_vh, T_vh: (m_vh * C_vh * (ct * Tr - r)) / (kt * F * (T_vh - Tr) + m_vh * (ct * Tr - r))  # из 1 лабы
+f = lambda C_vh, m_vh, T_vh: (m_vh * C_vh * (ct * Tr - r)) / (kt * F * (T_vh - Tr) + m_vh * (ct * Tr - r))
 
-M = lambda m_vh, m_vt: S * ((((m_vh - m_vt) / gizma) ** 2) + P_first - P_null)
+M = lambda m_vh, m_vt: S * ((((m_vh - m_vt) / sigma) ** 2) + P_first - P_null)
 
-dM = lambda m_vh, m_vt, T0: ((r * m_vh - r * gizma * math.sqrt(P_null + M(m_vh, m_vt) / S - P_first) - kt * F * (T0 - Tr) - ((m_vh - gizma * math.sqrt(P_null + M(m_vh, m_vt) / S - P_first)) * ct * Tr)) / (r - ct * Tr))  # из файла
+dM = lambda m_vh, m_vt, T0: ((r * m_vh - r * sigma * math.sqrt(P_null + M(m_vh, m_vt) / S - P_first) - kt * F * (T0 - Tr) - ((m_vh - sigma * math.sqrt(P_null + M(m_vh, m_vt) / S - P_first)) * ct * Tr)) / (r - ct * Tr))  # из файла
 
 cc = f(C0, m_vhod, T_vhod)
-print(cc)
+
 C0 += delta_C_vh
 m_vt = m_vhod - ((m_vhod * C0) / cc)
 
@@ -60,7 +56,6 @@ while t < t_max:
     t = t + delta_t
     cc = cc + (c(m_vhod, C0, cc, T_vhod, m_vt) * delta_t)
     C.append(cc)
-print(C)
 
 t = 0
 cc = f(C_vhod, m0, T_vhod)
@@ -80,7 +75,7 @@ while t < t_max:
     cc = cc + c(m_vhod, C_vhod, cc, T0, m_vt) * delta_t
     T.append(cc)
 
-fig, axes = pylab.subplots(nrows=1, ncols=3, figsize=(12, 5))
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(12, 5))
 
 axes[0].set(title='С.вых (C.вх)')
 axes[1].set(title='С.вых (m.вх)')
@@ -89,5 +84,5 @@ axes[0].plot(vr, C, color='blue')
 axes[1].plot(vr, m, color='blue')
 axes[2].plot(vr, T, color='blue')
 
-pylab.subplots_adjust(wspace=0.5, hspace=0)
-pylab.show()
+plt.subplots_adjust(wspace=0.5, hspace=0)
+plt.show()
