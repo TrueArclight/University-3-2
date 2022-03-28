@@ -18,7 +18,7 @@ delta_C = 0.05
 delta_m = 0.15
 delta_T = 25
 
-C_vh = 0.25 * (ro/0.2805)
+C_vh = (0.25 * ro) / 0.2805
 T_vhod_0 = 1300
 T_vhod_1 = 1360 
 
@@ -38,13 +38,21 @@ while T_vhod_0 < T_vhod_1:
     C1 = C_vh
     C2 = 0
     T1 = T_vhod_0   
+    C1_percent = C1 * (100*0.2805) / ro 
+    C2_percent = C2 * (100*0.2805) / ro 
     for i in l:
-        res_1.append(C1)
-        res_2.append(C2)
+        C1_percent = C1 * (100*0.2805) / ro 
+        C2_percent = C2 * (100*0.2805) / ro 
+        res_1.append(C1_percent)
+        res_2.append(C2_percent)
         C1 = C1 + d_C1(C1,T1) * delta_l
         C2 = C2 + d_C2(C1,C2,T1,T1) * delta_l
     axes[0].plot(l, res_1, color='black')
     axes[1].plot(l, res_2, color='black')
+    axes[0].set_xlabel("L, метры")
+    axes[0].set_ylabel("C1, %")
+    axes[1].set_xlabel("L, метры")
+    axes[1].set_ylabel("C2, %")
     res_1.clear()
     res_2.clear()
     T_vhod_0 += delta_T

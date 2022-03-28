@@ -41,7 +41,7 @@ def function_dC2(C1,C2,T):
     return ((function_K(T,1) * C1 - function_K(T,2) * C2) * Ro_Const * (np.pi * D_Const ** 2) / 4) / M_Option   
 
 def plotCreator():
-    fig, axes = plot.subplots(nrows=2, ncols=2, figsize=(18, 12))
+    fig, axes = plot.subplots(nrows=2, ncols=2, figsize=(12, 5))
     axes[0][0].set_xlabel("L, метры")
     axes[0][0].set_ylabel("C1, моль/м^3")
     axes[0][1].set_xlabel("L, метры")
