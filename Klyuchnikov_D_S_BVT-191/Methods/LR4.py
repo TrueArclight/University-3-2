@@ -51,7 +51,7 @@ for i in np.arange((t_max - t_s)/2, t_max/2, delta_bet):
         T0 = T0 + (T_T - T0) * ((4 * k_T) / (c_T * ro * D))
         T1.append(T0)
 
-axes = Axes3D(plt.figure())
+axes = Axes3D(plt.figure(figsize=(8,7)))
 axes.plot_trisurf(l, t, T1, cmap='plasma', edgecolor='none', antialiased=True)
 axes.set_xlabel('l')
 axes.set_ylabel('τ')

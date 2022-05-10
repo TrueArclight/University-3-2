@@ -15,7 +15,7 @@
         <div id="about">   
             <a href ="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
             <a href ="#" title="Преимущества" onclick="slowScroll('#overview')">Преимущества</a>
-            <a href ="#" title="Гистограмма" onclick="slowScroll('#types')">Гистограмма</a>
+            <a href ="#" title="Гистограмма" onclick="slowScroll('#hist')">Гистограмма</a>
             <a href ="#" title="Контакты" onclick="slowScroll('#contacts')">Контакты</a>
             <a href ="#" title="Ответы на вопросы" onclick="slowScroll('#faq')">FAQ</a>
         </div>
@@ -71,10 +71,91 @@
             <legend>Bitcoin and Ethereum</legend>
         </div>
     </div>
+    <div id="lab3">
+        <div id ="hist" class="chart">
+        </div>
+        <div>
+            <input type="radio" name="type" value="horizontal" id="horizontal">
+            <label for="horizontal">Horizontal</label>
+        </div>
+        <div>
+            <input type="radio" name="type" value="vertical" id="vertical">
+            <label for="vertical">Vertical</label>
+        </div>
 
-    <div id="types">
-    
-    </div> 
+        <form>
+            <label for="data">Data</label>
+            <input type="text" id="data" placeholder="10 20 30 (0 min, 100 max)">
+        </form>
+        <p>
+            <button id="btn" class="btn"> Draw histogram</button>
+        </p>
+        <p>
+            <button id="delete" class="btn">Clear data</button>
+        </p>
+        <form>
+</form>
+    </div>
+      <script>
+        
+        var created = false;
+        const btn = document.querySelector('#btn');    
+        const delbtn = document.querySelector('#delete');      
+        const radioButtons = document.querySelectorAll('input[name="type"]');
+        delbtn.addEventListener("click", () => {
+            var val = document.getElementById('data').value;
+            var data = val.split(' ');
+            var numbers = data.length;
+            for (let step = 0; step < numbers; step++){
+               let div = document.getElementById("id${step}").remove();
+            }
+            created = false;
+        });
+        btn.addEventListener("click", () => {
+
+            let selectedType;
+            var val = document.getElementById('data').value;
+            var data = val.split(' ');
+            var numbers = data.length;
+
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedType = radioButton.value;
+                    break;
+                }
+            }
+            if (selectedType == 'horizontal'){
+                let element = document.getElementById('hist');
+                element.style = "transform: rotate(360deg);"
+                if(!created){
+                    console.log('if');
+                    for (let step = 0; step < numbers; step++) {
+                        let div = document.createElement('div');
+                        div.id = "id${step}"
+                        div.className = "bar-${step}";
+                        div.style = "grid-row-start:" + (100 - data[step])+ ";";
+                        hist.append(div)
+                        created = true;
+                    }
+                }
+            } else {
+                let element = document.getElementById('hist');
+                element.style = "transform: rotate(90deg);"
+                if(!created){
+                    console.log('if');
+                    for (let step = 0; step < numbers; step++) {
+                        let div = document.createElement('div');
+                        div.id = "id${step}"
+                        div.className = "bar-${step}";
+                        div.style = "grid-row-start:" + (100 - data[step]) + ";";
+                        hist.append(div)
+                        created = true;
+                    }        
+                }   
+            }
+        });
+       
+      </script>
 
     <div id="contacts">
         <center><h5>Обратная связь</h5></center>

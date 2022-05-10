@@ -24,7 +24,7 @@ T_vhod_1 = 1360
 k1 = lambda T: A1 * np.exp((-E1) / (R * T))
 k2 = lambda T: A2 * np.exp((-E2) / (R * T))
 
-d_C1 = lambda С1, T1: (-k1(T1) * С1 * (ro * (np.pi * (D ** 2)) / 4)) /m
+d_C1 = lambda С1, T1: (-k1(T1) * С1 * (ro * (np.pi * (D ** 2)) / 4)) / m
 d_C2 = lambda C1, C2, T1, T2: ((k1(T1) * C1 - k2(T2) * C2) * ro * (np.pi * D ** 2) / 4) / m
 
 res_1 = []
@@ -55,15 +55,12 @@ while T_vhod_0 < T_vhod_1:
     axes[0].set_xlabel("L, метры")
     axes[0].set_ylabel("C1, %")
     axes[0].grid(True)
-
     axes[1].plot(l, res_2, color='red')
     axes[1].set_xlabel("L, метры")
     axes[1].set_ylabel("C2, %")
     axes[1].grid(True)
-
     res_1.clear()
     res_2.clear()
-
     T_vhod_0 += delta_T
 
 
