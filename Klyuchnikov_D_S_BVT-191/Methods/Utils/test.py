@@ -4,20 +4,20 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
 
-a = 1
+a = 1.3 * 10**(-1)
 delt_x = 0.1
 X = 1
 t_max = 10
 delt_t = 0.5 * delt_x ** 2
 
 #начальное
-fi = lambda x: 25 - 2 * x
+fi = lambda x: x**2 + 4 * x + 25
 #первое граничное
-f_1 = lambda t: 15 + 1 / (0.1 * t + 0.1)
+f_1 = lambda t: 25 + 6 * math.sin(t)
 #второе граничное
-f_2 = lambda t: 25 - math.cos(t)
+f_2 = 30
 
-d_T = lambda t, x: a * (delt_t/delt_x**2)*(d_T(t, x)- 2*d_T(t, x) + d_T(t, x)) + d_T(t, x)
+#d_T = lambda t, x: a * (delt_t/delt_x**2)*(d_T(t, x)- 2*d_T(t, x) + d_T(t, x)) + d_T(t, x)
 
 
 time = []
@@ -38,7 +38,7 @@ while x <= X:
 
 while t <= t_max:
     f_1s.append(f_1(t))
-    f_2s.append(f_2(t))
+    f_2s.append(f_2)
     time.append(t)
     t += delt_t
 
@@ -51,7 +51,7 @@ for j in np.arange(0, len(time) - 1):
     #print(T)
     for i in np.arange(1, 10):
         T[j+1][i] = T[j][i] + (((a * delt_t)/delt_x**2)*(T[j][i + 1] - 2 * T[j][i] + T[j][i-1]))
-    T[j+1][-1] = f_2(time[j])
+    T[j+1][-1]=f_2
 
 print(T)
 

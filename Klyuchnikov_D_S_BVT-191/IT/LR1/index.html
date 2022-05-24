@@ -85,7 +85,11 @@
 
         <form>
             <label for="data">Data</label>
-            <input type="text" id="data" placeholder="10 20 30 (0 min, 100 max)">
+            <input type="text" id="data" placeholder="10 20 30">
+        </form>
+        <form>
+            <label for="scale">Scale</label>
+            <input type="text" id="scale" placeholder="max number scale">
         </form>
         <p>
             <button id="btn" class="btn"> Draw histogram</button>
@@ -97,26 +101,39 @@
 </form>
     </div>
       <script>
-        
+        var max = 0;
+        function getMaxOfArray(numArray) {
+            max = 0;
+            return Math.max.apply(null, numArray);
+        }
+        function float2int (value) {
+            return value | 0;
+        }
         var created = false;
         const btn = document.querySelector('#btn');    
         const delbtn = document.querySelector('#delete');      
         const radioButtons = document.querySelectorAll('input[name="type"]');
         delbtn.addEventListener("click", () => {
             var val = document.getElementById('data').value;
-            var data = val.split(' ');
+            var data = val.split('.');
             var numbers = data.length;
             for (let step = 0; step < numbers; step++){
                let div = document.getElementById("id${step}").remove();
             }
+            max = 0;
             created = false;
         });
         btn.addEventListener("click", () => {
-
             let selectedType;
-            var val = document.getElementById('data').value;
-            var data = val.split(' ');
-            var numbers = data.length;
+            let scale = parseInt(document.getElementById('scale').value);
+            console.log(typeof(scale));
+            let val = document.getElementById('data').value;
+            let data = val.split(' ').map( Number );
+            let max = getMaxOfArray(data);
+            if(scale > 0){
+                max = scale;
+            }
+            let numbers = data.length;
 
             for (const radioButton of radioButtons) {
                 if (radioButton.checked) {
@@ -128,29 +145,29 @@
                 let element = document.getElementById('hist');
                 element.style = "transform: rotate(360deg);"
                 if(!created){
-                    console.log('if');
                     for (let step = 0; step < numbers; step++) {
                         let div = document.createElement('div');
                         div.id = "id${step}"
                         div.className = "bar-${step}";
-                        div.style = "grid-row-start:" + (100 - data[step])+ ";";
+                        let value = 100 - (100 * data[step] / max);
+                        div.style = "grid-row-start:" + float2int(value) + ";";
                         hist.append(div)
-                        created = true;
                     }
+                    created = true;
                 }
             } else {
                 let element = document.getElementById('hist');
                 element.style = "transform: rotate(90deg);"
                 if(!created){
-                    console.log('if');
                     for (let step = 0; step < numbers; step++) {
                         let div = document.createElement('div');
                         div.id = "id${step}"
                         div.className = "bar-${step}";
-                        div.style = "grid-row-start:" + (100 - data[step]) + ";";
+                        let value = 100 - (100 * data[step] / max);
+                        div.style = "grid-row-start:" + float2int(value) + ";";
                         hist.append(div)
-                        created = true;
-                    }        
+                    }  
+                    created = true;      
                 }   
             }
         });
