@@ -2,7 +2,7 @@ import pygame
 from positions import Position
 from curves import *
 
-width, height = 1920, 1080
+width, height = 1280, 720
 size = (width, height)
 
 pygame.init()

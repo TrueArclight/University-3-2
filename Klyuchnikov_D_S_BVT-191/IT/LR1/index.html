@@ -16,6 +16,7 @@
             <a href ="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
             <a href ="#" title="Преимущества" onclick="slowScroll('#overview')">Преимущества</a>
             <a href ="#" title="Гистограмма" onclick="slowScroll('#hist')">Гистограмма</a>
+            <a href ="#" title="Кодирование" onclick="slowScroll('#LR4')">Кодирование</a>
             <a href ="#" title="Контакты" onclick="slowScroll('#contacts')">Контакты</a>
             <a href ="#" title="Ответы на вопросы" onclick="slowScroll('#faq')">FAQ</a>
         </div>
@@ -71,7 +72,8 @@
             <legend>Bitcoin and Ethereum</legend>
         </div>
     </div>
-    <div id="lab3">
+
+    <div id="LR3">
         <div id ="hist" class="chart">
         </div>
         <div>
@@ -98,9 +100,72 @@
             <button id="delete" class="btn">Clear data</button>
         </p>
         <form>
+
+            
 </form>
     </div>
-      <script>
+      
+    <div id="LR4">
+        <form method="get" action="LR4.php"> 
+            <label for="name">Введите сообщение</label><span>*</span><br>
+            <input type="text" placeholder="Введите сообщение для кодирования" name="message" id="message"><br>
+        </form>
+    </div>
+    <div id="contacts">
+        <center><h5>Обратная связь</h5></center>
+        <form id="form_input">
+            <label for="name">Имя</label><span>*</span><br>
+            <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+            <label for="email">Ваша почта</label><span>*</span><br>
+            <input type="email" placeholder="Введите почту" name="email" id="email"><br>
+            <label for="message">Ваше сообщение</label><span>*</span><br>
+            <textarea placeholder="Введите ваще сообщение" name="message" id="message"></textarea><br>
+            <div id="mess_send" class="btn">Отправить</div> 
+        </form>
+        <code></code>
+    </div>
+
+    <div id="faq">
+        <div>
+            <span class="title">Оплата</span><br>
+            <span class="heading">Как купить криптовалюту?</span>
+            <li>Зарегистрируйтесь на бирже</li>
+            <li>Пройдите верификацию личности</li>
+            <li>Купите криптовалюту за деньги</li>
+            <li>Приступайте к торговле</li>
+        </div>  
+        <div>
+            <span class="title">Широкая линейка продуктов</span>
+            <li>Биткоин</li>
+            <li>Etherium</li>
+            <li>Dogecoin</li>
+        </div>
+        <div id="footer">
+            <source src="sounds/suda.mp3" type="audio/ogg; codecs=vorbis">
+            <footer>
+                Copyright @deadsxnpai <br>
+                Телефон: +79990000000 <br>
+                E-mail: crypto@gmail.com
+            </footer>
+        </div>
+        <!--Комментарий -->
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function slowScroll(id){
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500)
+        }
+        $(document).on("scroll", function() {
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed")
+            else
+                $("header").attr("class", "fixed")
+        });
+    </script>
+    <script>
         var max = 0;
         function getMaxOfArray(numArray) {
             max = 0;
@@ -174,59 +239,5 @@
        
       </script>
 
-    <div id="contacts">
-        <center><h5>Обратная связь</h5></center>
-        <form id="form_input">
-            <label for="name">Имя</label><span>*</span><br>
-            <input type="text" placeholder="Введите имя" name="name" id="name"><br>
-            <label for="email">Ваша почта</label><span>*</span><br>
-            <input type="email" placeholder="Введите почту" name="email" id="email"><br>
-            <label for="message">Ваше сообщение</label><span>*</span><br>
-            <textarea placeholder="Введите ваще сообщение" name="message" id="message"></textarea><br>
-            <div id="mess_send" class="btn">Отправить</div> 
-        </form>
-        <code></code>
-    </div>
-
-    <div id="faq">
-        <div>
-            <span class="title">Оплата</span><br>
-            <span class="heading">Как купить криптовалюту?</span>
-            <li>Зарегистрируйтесь на бирже</li>
-            <li>Пройдите верификацию личности</li>
-            <li>Купите криптовалюту за деньги</li>
-            <li>Приступайте к торговле</li>
-        </div>  
-        <div>
-            <span class="title">Широкая линейка продуктов</span>
-            <li>Биткоин</li>
-            <li>Etherium</li>
-            <li>Dogecoin</li>
-        </div>
-        <div id="footer">
-            <source src="sounds/suda.mp3" type="audio/ogg; codecs=vorbis">
-            <footer>
-                Copyright @deadsxnpai <br>
-                Телефон: +79990000000 <br>
-                E-mail: crypto@gmail.com
-            </footer>
-        </div>
-        <!--Комментарий -->
-    
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        function slowScroll(id){
-            $('html, body').animate({
-                scrollTop: $(id).offset().top
-            }, 500)
-        }
-        $(document).on("scroll", function() {
-            if($(window).scrollTop() === 0)
-                $("header").removeClass("fixed")
-            else
-                $("header").attr("class", "fixed")
-        });
-    </script>
 </body>
 </html>
