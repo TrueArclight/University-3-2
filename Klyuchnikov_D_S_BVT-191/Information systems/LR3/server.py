@@ -63,8 +63,13 @@ def connection():
     print("Клиент подключен ", client_address)
     list_cords_x, list_cords_y = can_receiver(client_data)
     plotting(list_cords_x, list_cords_y)
+    client_data.close()
 
+SERVER = socket.gethostbyname(socket.gethostname())
+print(f"[LISTENING] Server is listening on {SERVER}")
 connection()
+
+
 
 
 

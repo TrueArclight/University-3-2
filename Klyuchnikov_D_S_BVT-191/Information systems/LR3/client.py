@@ -2,7 +2,7 @@ import socket
 import random
 import time
 import zlib
-from Protocol import check_hash
+#from Protocol import check_hash
 
 
 def can_bit_array():

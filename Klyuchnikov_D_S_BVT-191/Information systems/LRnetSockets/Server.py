@@ -18,11 +18,7 @@ def handle_client(conn, addr):
     while connected:
         msg_length = conn.recv(HEADER).decode(FORMAT)
         if msg_length:
-            msg_length = int(msg_length)
-            msg = conn.recv(msg_length).decode(FORMAT)
-            if msg == DISCONNECT_MESSAGE:
-                connected = False
-
+            msg = conn.recv(HEADER*2).decode(FORMAT)
             print(f"[{addr}] {msg}")
             conn.send("Msg received".encode(FORMAT))
 
